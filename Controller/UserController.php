@@ -61,12 +61,11 @@ class UserController{
         $view = new \Views\Views($file,["category"=>$category,"data"=>$data]);
         }
     }
-	public function logout()
-	{
+	public function logout($file=""){
 		session_start();
 		session_unset();
 		session_destroy();
-		header('Location: ./');
+		header("Location: ./$file");
 		exit;
 	}
 }

@@ -32,8 +32,8 @@
   </header>
   <section class="mt-24">
     <h3 class="text-[2rem] font-bold text-center text-gray-800">Search and Explore to find your trip plan</h3>
-    <form action="" class="flex justify-center w-full mt-4 mb-3">
-      <input type="text" placeholder="Search for a Destination" class="border-[1px] border-gray-300 rounded-md px-3 py-3 text-sm w-2/5 outline-none focus:border-orange-500 focus:bg-transparent focus:ring-2 focus:ring-orange-200">
+    <form action="" method="POST" class="flex justify-center w-full mt-4 mb-3">
+      <input type="text" placeholder="Search for a Destination" name="name" class="border-[1px] border-gray-300 rounded-md px-3 py-3 text-sm w-2/5 outline-none focus:border-orange-500 focus:bg-transparent focus:ring-2 focus:ring-orange-200">
     </form>
     <p class="mb-2 text-sm text-center text-gray-500">Or browse our most popular destinations:</p>
     <div class="flex justify-center w-full gap-2">

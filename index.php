@@ -7,6 +7,7 @@ use App_Core\App;
 use App_Core\Config;
 use Controller\UserController;
 use Controller\PlanController;
+use Controller\PropertieController;
 
 $route=new Route();
 $route->get("/project/Travel_Planner/",[UserController::class,"file","signin"]);
@@ -17,17 +18,27 @@ $route->get("/project/Travel_Planner/plan.html",[UserController::class,"file","p
 $route->get("/project/Travel_Planner/search.html",[UserController::class,"file","search"]);
 $route->get("/project/Travel_Planner/guides.html",[UserController::class,"file","guides"]);
 $route->get("/project/Travel_Planner/logout.html",[UserController::class,"logout"]);
+$route->get("/project/Travel_Planner/delete.html",[PlanController::class,"remove","Home"]);
+$route->get("/project/Travel_Planner/fillter.html",[PropertieController::class,"fillter","fillter"]);
 
 $route->post("/project/Travel_Planner/",[UserController::class,"create","Home"]);
 $route->post("/project/Travel_Planner/signin.html",[UserController::class,"create","Home"]);
 $route->post("/project/Travel_Planner/login.html",[UserController::class,"check","Home"]);
 $route->post("/project/Travel_Planner/plan.html",[PlanController::class,"add","plan"]);
+$route->post("/project/Travel_Planner/search.html",[PropertieController::class,"search","searching"]);
 
-$route->get("/project/Travel_Planner/Admin",[UserController::class,"file","admin_login"]);
-$route->get("/project/Travel_Planner/Admin/login.html",[UserController::class,"file","admin_login"]);
-$route->get("/project/Travel_Planner/Admin/admin_Home.html",[UserController::class,"show","admin_Home"]);
-$route->post("/project/Travel_Planner/Admin",[UserController::class,"check","admin_Home"]);
-$route->post("/project/Travel_Planner/Admin/login.html",[UserController::class,"check","Home"]);
+$route->get("/project/Travel_Planner/Admin_logout.html",[UserController::class,"logout","Admin"]);
+$route->get("/project/Travel_Planner/Admin",[UserController::class,"file","Admin_login"]);
+$route->get("/project/Travel_Planner/Admin_login.html",[UserController::class,"file","Admin_management"]);
+$route->get("/project/Travel_Planner/Admin_management.html",[PropertieController::class,"show","Admin_management"]);
+$route->get("/project/Travel_Planner/Admin_add_plan.html",[UserController::class,"file","Admin_add_plan"]);
+$route->get("/project/Travel_Planner/Admin_add_properties.html",[UserController::class,"file","Admin_add_properties"]);
+$route->get("/project/Travel_Planner/Admin_delete.html",[PropertieController::class,"remove","Admin_management"]);
+
+$route->post("/project/Travel_Planner/Admin_add_plan.html",[PlanController::class,"add","Admin_add_plan"]);
+$route->post("/project/Travel_Planner/Admin_add_properties.html",[PropertieController::class,"add","Admin_add_properties"]);
+$route->post("/project/Travel_Planner/Admin",[UserController::class,"check","Admin_management"]);
+$route->post("/project/Travel_Planner/Admin_login.html",[UserController::class,"check","Admin_management"]);
 
 
 (new App($route,

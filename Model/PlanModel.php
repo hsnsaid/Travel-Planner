@@ -10,4 +10,8 @@ class PlanModel extends Instance{
         $data=$this->db->show("plans",["*"],["user_id"=> $user_id]);
         return $data;
     }
+    public function remove($id){
+        $data=$this->db->delete("plans",["id"=> $id]);
+        return $data;
+    }
 }
