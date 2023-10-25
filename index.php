@@ -8,6 +8,7 @@ use App_Core\Config;
 use Controller\UserController;
 use Controller\PlanController;
 use Controller\PropertieController;
+use Controller\LinkController;
 
 $route=new Route();
 $route->get("/project/Travel_Planner/",[UserController::class,"file","signin"]);
@@ -20,12 +21,15 @@ $route->get("/project/Travel_Planner/guides.html",[UserController::class,"file",
 $route->get("/project/Travel_Planner/logout.html",[UserController::class,"logout"]);
 $route->get("/project/Travel_Planner/delete.html",[PlanController::class,"remove","Home"]);
 $route->get("/project/Travel_Planner/fillter.html",[PropertieController::class,"fillter","fillter"]);
+$route->get("/project/Travel_Planner/link.html",[LinkController::class,"show","link"]);
+$route->get("/project/Travel_Planner/detail.html",[LinkController::class,"detail","detail"]);
 
 $route->post("/project/Travel_Planner/",[UserController::class,"create","Home"]);
 $route->post("/project/Travel_Planner/signin.html",[UserController::class,"create","Home"]);
 $route->post("/project/Travel_Planner/login.html",[UserController::class,"check","Home"]);
 $route->post("/project/Travel_Planner/plan.html",[PlanController::class,"add","plan"]);
 $route->post("/project/Travel_Planner/search.html",[PropertieController::class,"search","searching"]);
+$route->post("/project/Travel_Planner/link.html",[LinkController::class,"add","Home"]);
 
 $route->get("/project/Travel_Planner/Admin_logout.html",[UserController::class,"logout","Admin"]);
 $route->get("/project/Travel_Planner/Admin",[UserController::class,"file","Admin_login"]);

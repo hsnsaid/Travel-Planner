@@ -6,8 +6,8 @@ class PlanModel extends Instance{
         $id=$this->db->insert("plans","title,start_date,end_date,description,user_id",[$title,$start_date,$end_date,$description,$user_id]);
         return $id!=null ? $id : false;
     }
-    public function show($user_id){
-        $data=$this->db->show("plans",["*"],["user_id"=> $user_id]);
+    public function show($name,$clause){
+        $data=$this->db->show("plans",["*"],["$clause"=> $name]);
         return $data;
     }
     public function remove($id){

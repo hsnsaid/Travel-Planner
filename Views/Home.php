@@ -36,6 +36,7 @@
       <div class="container px-5 pt-5 mx-auto">
         <div class="flex flex-wrap -m-4">
           <?php foreach($data['data'] as $plan){?>
+          <a href="detail.html?id=<?php echo $plan['id']?>">
           <div class="p-4 xl:w-1/3 md:w-1/2">
               <div class="p-6 bg-white border border-gray-200 rounded-lg shadow">
                 <div class="flex justify-between w-full">
@@ -54,6 +55,7 @@
               </div>
           </div>
           <?php }?>
+          </a>
         </div>
       </div>
    </section>

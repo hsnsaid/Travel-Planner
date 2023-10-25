@@ -31,19 +31,14 @@
       </div>
   </header>
   <section class="px-12 py-8">
-    <h2 class="mb-3 text-3xl text-center">going to <?php echo htmlspecialchars($data["search"][0]['destination'])?></h2>
-      <div class="flex gap-2">
-        <p class="mb-4">Fillter By:</p>
-        <?php foreach($data["search"] as $type){?>
-          <a href="fillter.html?fillter=<?php echo htmlspecialchars($type['type'])?>&name=<?php echo htmlspecialchars($type['destination'])?>"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">  <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" /></svg></a>
-        <p><?php echo htmlspecialchars($type['type'])?></p>
-        <?php }?>
-      </div>
-      <?php foreach($data["search"] as $search){?>
+    <h2 class="mb-3 text-3xl text-center"><?php echo htmlspecialchars($data["plan"][0]["title"])?> 
+    </h2>
+      <?php foreach($data["data"] as $data){?>
     <div class="p-3 mb-3 bg-gray-100 rounded-md shadow-md">
-      <h3 class="text-3xl font-bold text-orange-500 "><?php echo htmlspecialchars($search['name'])?></h3>
-      <h5><?php echo htmlspecialchars($search['type'])?></h5>
-      <a href="link.html?id=<?php echo $search['id']?>"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.25a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z" clip-rule="evenodd" /></svg></a>
+      <h3 class="text-3xl font-bold text-orange-500 ">
+        <?php echo htmlspecialchars($data['name'])?>
+    </h3>
+      <h5><?php echo htmlspecialchars($data['type'])?></h5>
     </div>
     <?php } ?>
   </section>
